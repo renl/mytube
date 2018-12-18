@@ -1,0 +1,7 @@
+<div class="jumbotron">
+  <h2><%= gettext "Welcome to %{name}!", name: "My Tube" %></h2>
+  <p class="lead">
+    Curate a list of educational videos from Youtube<br />that you can watch while taking notes.
+  </p>
+</div>
+

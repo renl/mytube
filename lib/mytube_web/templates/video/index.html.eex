@@ -1,0 +1,21 @@
+<h2>Listing Videos</h2>
+
+<%= for video <- @videos do %>
+
+<div class="card" style="width: 360px">
+  <%= img_tag(video.thumbnail, class: "card-img-top", alt: video.thumbnail) %> 
+  <div class="card-body">
+    <h5 class="card-title"><%= video.title %></h5>
+    <p class="card-text">
+      <%= video.duration %>
+    </p>
+    <span><%= link "Show", to: video_path(@conn, :show, video), class: "btn btn-primary" %></span>
+    <span><%= link "Delete", to: video_path(@conn, :delete, video), method: :delete, data: [confirm: "Are you sure?"], class: "btn btn-danger" %></span>
+  </div>
+</div>
+
+<% end %>
+
+
+
+<span><%= link "New Video", to: video_path(@conn, :new) %></span>

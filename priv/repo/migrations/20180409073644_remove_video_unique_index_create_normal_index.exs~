@@ -1,0 +1,7 @@
+defmodule Mytube.Repo.Migrations.RemoveVideoUniqueIndexCreateNormalIndex do
+  use Ecto.Migration
+
+  def change do
+
+  end
+end

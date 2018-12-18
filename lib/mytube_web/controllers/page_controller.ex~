@@ -1,0 +1,16 @@
+defmodule MytubeWeb.PageController do
+  use MytubeWeb, :controller
+
+  
+  def ajax(conn, params) do
+    IO.inspect params
+    conn
+    |> json(%{ajax_resp: "Data from the server"})
+  end
+  
+  def index(conn, _params) do
+    conn
+    |> put_flash(:info, "Welcome.")
+    |> render("index.html")
+  end
+end

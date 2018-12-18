@@ -1,0 +1,23 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <a class="navbar-brand" href=<%= page_path(@conn, :index) %>>My Tube</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+    <ul class="navbar-nav mr-auto">
+      <%= if @conn.assigns.user do %>
+      <li class="nav-item">
+	Welcome, <%= @conn.assigns.user.first_name %>!
+      </li>
+      <li class="nav-item">
+	<%= link "Sign out", to: auth_path(@conn, :request, "google"), class: "nav-link"  %>
+      </li>
+      <% else %>
+      <li class="nav-item">
+	<%= link "Sign in with Google", to: auth_path(@conn, :request, "google"), class: "nav-link"  %>
+      </li>
+      <% end %>
+    </ul>
+  </div>
+</nav>
